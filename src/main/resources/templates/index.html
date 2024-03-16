@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Shortener</title>
+</head>
+<body>
+<h1>Spring Shortener Project</h1>
+
+<form action="/create" method="post" id="form">
+    <input type="text" field="url" name="url">
+    <button type="submit">생성하기</button>
+</form>
+
+<div id="result">
+
+</div>
+<script type="text/javascript" th:src="@{/js/bootstrap.bundle.min.js}" ></script>
+<script type="text/javascript" th:src="@{/js/jquery-3.7.1.min.js}" ></script>
+<script type="text/javascript" th:src="@{/js/createRequest.js}" ></script>
+
+</body>
+</html>
