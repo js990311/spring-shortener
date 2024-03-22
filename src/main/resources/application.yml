@@ -27,3 +27,4 @@ logging:
   level:
     sql: debug
     web: debug
+    com.toyproject.shortener.aop: debug

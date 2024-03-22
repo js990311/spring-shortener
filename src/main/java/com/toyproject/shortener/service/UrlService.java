@@ -1,5 +1,6 @@
 package com.toyproject.shortener.service;
 
+import com.toyproject.shortener.aop.annotation.MethodTimeChecker;
 import com.toyproject.shortener.domain.Url;
 import com.toyproject.shortener.dto.response.ShortUrlResponse;
 import com.toyproject.shortener.encoder.Base62Encoder;
@@ -13,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Slf4j
@@ -42,6 +42,7 @@ public class UrlService {
         return Base62Encoder.encode(url.getId());
     }
 
+    @MethodTimeChecker
     public String getOriginalUrl(String shortUrl){
         // redis로 캐시
         String originalUrl = cacheRepository.get(shortUrl);
