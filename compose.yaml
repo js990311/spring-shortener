@@ -13,5 +13,10 @@ services:
     volumes:
       - spring_shortener:/var/lib/mysql
 
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+
 volumes:
   spring_shortener:
